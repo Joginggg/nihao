@@ -132,29 +132,29 @@ elif selected == "Aib":
     if st.button("Buka Galeri Aib"):
         st.session_state.show_input = True
 
-        if password: 
-            if password == "Ayanokoji":  
-                st.success("✅ Password benar! Selamat menikmati Galeri Aib")
+    if password: 
+        if password == "Ayanokoji":  
+            st.success("✅ Password benar! Selamat menikmati Galeri Aib")
 
-                fotos = [
-                    {"path": "cicak.jpg", "caption": "Ganggu kali cicak ni, minggir kek mau liat elf"},
-                    {"path": "elf.jpg", "caption": "Na ini elf apa ya, kok bisa ada di galeri aib? Harusnya di galeri spesial ya"},
-                    {"path": "gajelas.jpg", "caption": "Ngapain coba ni potong rambut, gajelas banget"},
-                    {"path": "kacalama.jpg", "caption": "Bingung-bingungnya ni bandingin kacamata lama sama yang baru, mana yang lebih kece? Jelas elf nya"},
-                    {"path": "seriusnya.jpg", "caption": "Gila serius banget ni, padahal cuma mau foto bandingin kacamata doang"},
-                    {"path": "ujan.jpg", "caption": "Keren kak ujan ujanan trus jadi minoritas"},
-                    {"path": "uno.jpg", "caption": "Gilaa, ni si gabakalan lupa main uno sampe jam 12 malem"},
-                    ]
+            fotos = [
+                {"path": "cicak.jpg", "caption": "Ganggu kali cicak ni, minggir kek mau liat elf"},
+                {"path": "elf.jpg", "caption": "Na ini elf apa ya, kok bisa ada di galeri aib? Harusnya di galeri spesial ya"},
+                {"path": "gajelas.jpg", "caption": "Ngapain coba ni potong rambut, gajelas banget"},
+                {"path": "kacalama.jpg", "caption": "Bingung-bingungnya ni bandingin kacamata lama sama yang baru, mana yang lebih kece? Jelas elf nya"},
+                {"path": "seriusnya.jpg", "caption": "Gila serius banget ni, padahal cuma mau foto bandingin kacamata doang"},
+                {"path": "ujan.jpg", "caption": "Keren kak ujan ujanan trus jadi minoritas"},
+                {"path": "uno.jpg", "caption": "Gilaa, ni si gabakalan lupa main uno sampe jam 12 malem"},
+                ]
 
-                cols_per_row = 3
+            cols_per_row = 3
 
-                for i in range(0, len(fotos), cols_per_row):
-                    row_items = fotos[i:i+cols_per_row]
-                    cols = st.columns(len(row_items))
-                    for col, foto in zip(cols, row_items):
-                        with col:
-                            st.image(foto["path"], use_container_width=True)
-                            st.caption(foto["caption"])
-                st.title("**Dikit banget ya Aib nya!**")        
-            else:
-                st.error("❌ Password salah, coba lagi!")
+            for i in range(0, len(fotos), cols_per_row):
+                row_items = fotos[i:i+cols_per_row]
+                cols = st.columns(len(row_items))
+                for col, foto in zip(cols, row_items):
+                    with col:
+                        st.image(foto["path"], use_container_width=True)
+                        st.caption(foto["caption"])
+            st.title("**Dikit banget ya Aib nya!**")        
+        else:
+            st.error("❌ Password salah, coba lagi!")
